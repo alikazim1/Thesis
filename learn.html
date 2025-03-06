@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="01.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="openbtn" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+        <h2>Chapter Navigation</h2>
+        <a href="#section1">Prerequisites</a>
+        <a href="#section2">Introduction to AI</a>
+        <a href="#section3">PyTorch</a>
+        <a href="#section4">Where PyTorch is used?</a>
+        <a href="#section5">Setting up Environment for PyTorch</a>
+        <a href="#section6">Tensor</a>
+        <a href="#section7">Methods in Tensor</a>
+        <a href="#section8">Tensor Operations</a>
+        <a href="#section9">Playing More</a>
+        <a href="#section10">Interoperability with NumPy</a>
+        <a href="#section11">Reproducibility</a>
+        <a href="#section12">GPU Action</a>
+        <a href="#section13">Exercise</a>
+
+    </div>
+
+    <div class="content">
+      <h1>00. PyTorch Fundamentals</h1>
+
+      <img src="./img/torch1.png" class="centered-image" />
+      <br />
+      <div class="prerequisites">
+        <h2 id="section1">Prerequisites</h2>
+        <p>This book assumes the following prerequisites: </p>
+        <ul>
+          <li>
+            Basic/Intermediate Python
+          </li>
+          <li>
+            Linear Algebra
+          </li>
+          <li>
+            Optional: ML and CMD basics
+          </li>
+        </ul>
+      </div>
+      <h1 id="section2">Introduction to AI</h1>
+      <p>Welcome to the comprehensive guide on PyTorch, designed to take you from fundamentals to advanced applications.</p>
+
+      <p>
+        Before diving into
+        <a href="https://pytorch.org" target="_blank">PyTorch</a>, let's examine
+        what artificial intelligence (AI) is.       
+      </p>
+      <div class="ai-definition">
+        <strong>AI:</strong> AI refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions.
+      </div>
+      <div class="learning-objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+          <li>Understand the basics of artificial intelligence.</li>
+          <li>Learn how to install and set up PyTorch.</li>
+          <li>Get familiar with essential concepts like Tensors and GPU acceleration.</li>
+        </ul>
+      </div>
+
+      
+      <br>
+      <h1 id="section3">PyTorch</h1>
+      <img src="./img/dddd.png" class="deep-learning" />
+      <p>
+        PyTorch is open-source machine learning and deep learning library
+        developed by Facebook's AI Research lab.
+      </p>
+      <ul>
+        <li>
+          PyTorch integrates with python ecosystem: It is easy to incorporate
+          PyTorch with existing projects build with other libraries like NumPy,
+          scikit-learn, and SciPy.
+        </li>
+        <br />
+        <li>
+          GPU acceleration: PyTorch allows to train the models on GPU, which is
+          essential for training large-scale models efficiently. It also helps
+          in increasing speed.
+        </li>
+        <br />
+        <li>
+          Strong support for research: Due to simplicity and dynamic nature
+          PyTorch is adopted widely in research community.
+        </li>
+        <br />
+        <li>
+          Ease of use and flexiblity: PyTorch's simple design and dynamic
+          computation graphs make it easy to use and flexible.
+        </li>
+      </ul>
+      <img src="./img/Pythonic.png" class="deep-learning" />
+      <br />
+      <h1 id="section4">Where PyTorch is used?</h1>
+      <p>
+        <ul>
+          <li><b>Meta</b>: It uses PyTorch for tasks such as image and video recognition, improving content recognition, and developing AI features.</li>
+          <br>
+          <li><b>Microsoft</b>: It uses PyTorch for applications such as natural language understanding in its products and services, like Cortana and Office 365.</li>
+          <br>
+          <li><b>Amazon</b>: Amazon Web Services (AWS) customers use PyTorch for building and scaling machine learning models.</li>
+          <br>
+          <li><b>Tesla and Uber</b>: PyTorch helps Tesla to process and analyze vast amounts of data collected from its cameras continuously. And Uber uses PyTorch for motion planning and simulation in developing self-driving technology.</li>
+        </ul>
+      </p>
+      <img src="./img/torch.png" class="deep-learning" />
+      <br>
+      
+    </div>
+    <div class="torch">
+      <h1 id="section5">Setting up Environment for PyTorch</h1>
+      <div class="note">
+          <p><strong>Note:</strong> Before running any of the code in this notebook, you should have gone through the <a href="https://pytorch.org/get-started/locally/ "target="_blank">PyTorch setup steps</a>.</p>
+          <p>However, <strong>if you're running on <a href="https://colab.research.google.com/"target="_blank">Google Colab</a></strong>, everything should work (Google Colab comes with PyTorch and other libraries installed).</p>
+      </div>
+  </div>
+  <script src="https://gist.github.com/alikazim1/9c8f9fd78365f63d30a11565390f6e1d.js"></script>
+  
+  <br>
+  <h1 id="section6">Tensor</h1>
+  <p>
+    Floating point numbers are the way a model deals with the information. We need a way to encode real-world data of the kind we want to process into something digestable by a model and then decode the output back to something we can understand and use for our purpose. 
+    
+  </p>
+  <img src="./img/floating_nums.png" class="deep-learning" />
+
+  
+
+  
+  <p>
+    
+    Tensors are specialized data structure that are very similar to arrays or matrices. The dimensionality of a tensor coincides with the number of indexes used to refer to scaler values with in the tensor. A Tensor is fundamental building block in deep learning, just as a digit in fundamental building block of mathematics.
+  </p>
+
+  <img src="./img/tensor_representation.png" class="deep-learning" />
+  
+
+  <p> <b>Why Tensor?</b> <br> <br> Python lists are designed for general purpose numerical operations. They lack operations like dot product of two vectors, making them inefficient for numerical data. In short, multi-dimentional lists are inefficient. For this reason data structures like PyTorch Tensors are introduced, which provide efficient low-level implementation of numberical data structures and related operations on them. Tensors are allocated in contagoius chunks of memory managed by torch.Storage instances. This contiguity is important for performance reasons especially when performing operations.
+  </p>
+
+  <img src="./img/tensor_storage.png" class="deep-learning" />
+
+  <p> The contiguity can be check by the function `is_contiguous()` function.
+  </p>
+  <script src="https://gist.github.com/alikazim1/1c518bfe0d8ab243e9ea182a64b16f6f.js"></script>
+
+<p>
+  In PyTorch, we use tensors to encode the inputs and outputs of a model, as well as the model’s parameters.
+</p>
+<img src="./img/tensorr.png" class="deep-learning" />
+<br>
+
+
+<script src="https://gist.github.com/alikazim1/93433cb5e200d5b73792a4fcd4071eb2.js"></script>
+<div style="text-align: center;">
+  <strong>torch.Size([1, 3, 3])</strong>
+</div>
+<br>
+<img src="./img/hhh.png" class="deep-learning" />
+<p>
+  In contrast, tensors can represent anything in the universe. Once these tensors are embedded into the machine, we can manipulate them.
+</p>
+<script src="https://gist.github.com/alikazim1/c897e38391de52456fb20d7ea453852f.js"></script>
+<br>
+<h1 id="section7">Methods in Tensor</h1>
+<br>
+<script src="https://gist.github.com/alikazim1/26b02f5123d4819c922017b02dcad9ed.js"></script>
+
+<br>
+
+<h1 id="section8">Tensor Operations</h1>
+<p>Every type of data(image, video,text,audio,milky-way galaxy etc) in PyTorch is represented by tensors. The deep learning model gains knowledge by examining those tensors and executing numerous operations(potentially millions or more) on them constructing a depiction of the patterns within the input data.</p>
+<p>
+  The operations are following: 
+</p>
+<br>
+<script src="https://gist.github.com/alikazim1/1863f97299c43a10145cd7e60b7abc55.js"></script>
+<br>
+
+<h1>Finding min, max, sum, etc</h1>
+<script src="https://gist.github.com/alikazim1/23d9a5370547b724ee0fc017058980b7.js"></script>
+
+<p>Spectecularrr. We have covered a fair amount of tensor stories. But there is a bunch more in the torch.Tensor <a href="https://pytorch.org/docs/stable/tensors.html" target="_blank">documentation.</a> I would recommend spending 10-mins to scaming down the page and maybe scrabble the code.</p>
+
+
+<h1 id="section9">Playing More</h1>
+<br>
+<script src="https://gist.github.com/alikazim1/86d419c3b04f69d414e136dbb6ee2928.js"></script>
+
+<h1>Indexing of Tensors</h1>
+<p>The tricky part of dealing with tensors is its indexing. It is often asked in interviews. We use it because sometimes we need to select specific data from tensors. It is similar of indexing in NumPy arrays and python lists </p>
+
+<script src="https://gist.github.com/alikazim1/cde57c236d0520159de81688a549be49.js"></script>
+
+<h1 id="section10">Interoperability with NumPy</h1>
+<br>
+<p>
+PyTorch tensors can be converted into NumPy arrays and vice versa very efficiently. By doing so we can take advantage of the wide range of NumPy functions. 
+</p>
+<script src="https://gist.github.com/alikazim1/4c190c9c8cf48f53d1e394a550441fa0.js"></script>
+
+<h1 id="section11">Reproducibility</h1> 
+<p>The neural networks that we are going to study start with random numbers to extract deep patterns. Initially, the random numbers do not represent anything but neural networks try to improve them using tensor operations to better describe patterns in data.</p>
+<br>
+<p>
+  In short: Neural Network training is all about <br>
+  <strong>initialize random numbers -> tensor operations on them -> adjust them again and again.</strong>
+
+  Although randomness works good with neural networks but sometimes you like same numbers to work with. That's where <strong>reproducibility</strong> comes into action. In other words, you can get the same (or very similar) numbers on your computer running the same code as mine. 
+</p>
+
+<script src="https://gist.github.com/alikazim1/a828359c5b03a6176bef9c08099a1bf3.js"></script>
+
+
+<h1 id="section12">GPU: Terminator</h1>
+<p>As we already seen that tensors are having lots of operations. In training of a neural network millions of operations on tensors are required, which is more difficult for a single CPU to carryout. That's why GPU comes into action. GPU's are best due to their ability to handle massive computational requirements(parallel processing) for training of networks. </p>
+
+<img src="./img/gpu.png" class="deep-learning" />
+<img src="./img/gpu_parallization.png" class="deep-learning" />
+
+<p>Since <a href="https://colab.google/ "target="_blank">Google Colab</a> is free to use. We can use GPU for free. To check if you got access to Nvidia GPU, you can run <strong>!nvidia-smi</strong> on cmd.</p>
+<script src="https://gist.github.com/alikazim1/7959d81714df368fb244ac4d766cf87c.js"></script>
+
+
+<h1 id="section13">Exercise</h1>
+<p>
+  Below some practice questions. I would really encourage you to solve them before the next chapter. The solutions are given at the end of the page. 
+</p>
+
+<form class="questions">
+
+<ol>
+  <li>How do you check the version of PyTorch installed in your environment? Write the code to print the version.</li> <br>
+
+  <li>Import torch and check if a GPU is available.</li> <br>
+  <li>Create a random tensor and move it to GPU.</li> <br>
+  <li>Multiply previous tensor with itself on GPU.</li> <br>
+  <li>Explain why tensors are preferred over Python lists for numerical operations in deep learning.</li> <br>
+  <li>How can you check if a tensor is stored in contiguous memory? Write a code example to demonstrate this.</li><br>
+  <li>What is the result of the following code and why? <pre><code>
+    import torch
+    a = torch.tensor([[1,2,3,4],[5,6,7,8]])
+    b = a.T
+    print(b.is_contiguous())
+  </code></pre></li><br>
+  
+  <li>
+    How do you convert a non-contiguous tensor to a contiguous tensor? Write the code to demonstrate this.
+  </li><br>
+  <li>Create a tensor of shape (2, 3) with random values. Then create another tensor of the same shape with all ones. Write the code to achieve this and print both tensors.</li> <br>
+  <li>Explain the difference between a tensor's reshape() and view() methods in PyTorch. When would you use clone() instead?</li>
+  <br>
+  <li>
+    Write a code to demonstrate matrix multiplication using both matmul() and the @ operator.
+  </li> <br>
+
+  <li>How can you transpose a tensor? Write a code example to transpose a (3, 2) tensor and then perform a matrix multiplication with another compatible tensor.</li> <br>
+  <li>Create a tensor filled with zeros of shape (3, 2) and another tensor filled with random integers between 0 and 5 of the same shape. Write the code to demonstrate this.</li> <br>
+  <li>
+    How do you convert a PyTorch tensor to a NumPy array? Write the code to convert a tensor of ones to a NumPy array and modify the array.
+  </li> <br>
+  <li>
+    What is the purpose of torch.arange() and torch.linspace()? Write code examples to create a tensor using each of these functions.
+  </li> <br>
+  <li>
+    Write a code snippet to create two tensors, one with random values and one with a complex number (using real and imaginary parts). Print both tensors.
+  </li> <br>
+  <li>
+    Demonstrate how to use torch.max(), torch.min(), torch.mean(), and torch.sum() on a tensor. Provide code and expected output.
+  </li> <br>
+
+<li>
+  What will be the output of the following code and why?
+  <pre><code>
+    scaler = torch.tensor(5)
+    print(scaler.ndim)
+  </code></pre>
+</li>
+
+
+
+</ol>
+
+<p>Here are <a href="https://gist.github.com/alikazim1/18e62cbd1714ffd7f36729f8c7078648" target="_blank">Solutions</a></p>
+
+
+
+</form>
+
+
+
+
+  </body>
+  <script src="learn.js"></script>
+</html>

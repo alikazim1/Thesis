@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Excersise.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <br />
+
+    <div class="quiz-container">
+      <h1>Multiple Choice Quiz</h1>
+      <form id="quiz-form">
+        <!-- Question 1 -->
+        <div class="question">
+          <h3>
+            1. Which of the following show the correct initialization of tensor?
+            Note: All the libraries already included
+          </h3>
+          <label
+            ><input type="radio" name="question1" value="A" />A
+            <img src="Tensors questions/Q1/1.png" alt=""
+          /></label>
+          <label
+            ><input type="radio" name="question1" value="B" />B
+            <img src="Tensors questions/Q1/2.png"
+          /></label>
+          <label
+            ><input type="radio" name="question1" value="C" />C
+            <img src="Tensors questions/Q1/3.png"
+          /></label>
+          <label
+            ><input type="radio" name="question1" value="D" />D
+            <img src="Tensors questions/Q1/4.png" />
+          </label>
+          <button type="button" onclick="showAnswer('answer1')">
+            Show Answer
+          </button>
+          <div id="answer1" class="answer">
+            The correct answers are A, B and C.
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+          <h3>
+            How do you create a tensor of zeros with a shape of (2, 3) in
+            PyTorch?
+          </h3>
+          <label
+            ><input type="radio" name="question2" value="A" /> A. torch.ones(2,
+            3)</label
+          >
+          <label
+            ><input type="radio" name="question2" value="B" /> B. torch.zeros(2,
+            3)</label
+          >
+          <label
+            ><input type="radio" name="question2" value="C" /> C. torch.empty(2,
+            3)</label
+          >
+          <label
+            ><input type="radio" name="question2" value="D" /> D.
+            torch.tensor([2, 3])</label
+          >
+          <button type="button" onclick="showAnswer('answer2')">
+            Show Answer
+          </button>
+          <div id="answer2" class="answer">Answer: B. torch.zeros(2, 3)</div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+          <h3>3. Which method converts a NumPy array to a PyTorch tensor?</h3>
+          <label
+            ><input type="radio" name="question3" value="A" /> A.
+            numpy_to_tensor()</label
+          >
+          <label
+            ><input type="radio" name="question3" value="B" /> B.
+            torch.from_numpy()</label
+          >
+          <label
+            ><input type="radio" name="question3" value="C" /> C.
+            tensor.numpy_to_tensor()</label
+          >
+          <label
+            ><input type="radio" name="question3" value="D" /> D.
+            numpy.to_tensor()</label
+          >
+          <button type="button" onclick="showAnswer('answer3')">
+            Show Answer
+          </button>
+          <div id="answer3" class="answer">Answer: B. torch.from_numpy()</div>
+        </div>
+        <!-- Question 4 -->
+        <div class="question">
+          <h3>
+            4. What function would you use to determine the shape of a tensor in
+            PyTorch?
+          </h3>
+          <label
+            ><input type="radio" name="question4" value="A" /> A.
+            tensor.size()</label
+          >
+          <label
+            ><input type="radio" name="question4" value="B" /> B.
+            tensor.shape()</label
+          >
+          <label
+            ><input type="radio" name="question4" value="C" /> C.
+            torch.shape(tensor)</label
+          >
+          <label
+            ><input type="radio" name="question4" value="D" /> D.
+            tensor.dimension()</label
+          >
+          <button type="button" onclick="showAnswer('answer4')">
+            Show Answer
+          </button>
+          <div id="answer4" class="answer">Answer: A. tensor.size()</div>
+        </div>
+
+        <div class="question">
+          <h3>
+            5. How do you perform element-wise addition of two tensors, a and b?
+          </h3>
+          <label
+            ><input type="radio" name="question5" value="A" /> A. a * b</label
+          >
+          <label
+            ><input type="radio" name="question5" value="B" /> B. a / b</label
+          >
+          <label
+            ><input type="radio" name="question5" value="C" /> C. a + b</label
+          >
+          <label
+            ><input type="radio" name="question5" value="D" /> D. a - b</label
+          >
+          <button type="button" onclick="showAnswer('question5')">
+            Show Answer
+          </button>
+          <div id="question5" class="answer">Answer: C. a + b</div>
+        </div>
+
+        <div class="question">
+          <h3>
+            6. What is the correct way to move a tensor to the GPU in PyTorch?
+          </h3>
+          <label
+            ><input type="radio" name="question6" value="A" /> A.
+            tensor.to_gpu()</label
+          >
+          <label
+            ><input type="radio" name="question6" value="B" /> B.
+            tensor.cuda()</label
+          >
+          <label
+            ><input type="radio" name="question6" value="C" /> C.
+            tensor.gpu()</label
+          >
+          <label
+            ><input type="radio" name="question6" value="D" /> D.
+            tensor.to_device()</label
+          >
+          <button type="button" onclick="showAnswer('question6')">
+            Show Answer
+          </button>
+          <div id="question6" class="answer">Answer: B. tensor.cuda()</div>
+        </div>
+
+        <div class="question">
+          <h3>
+            7. How do you create a tensor with random values sampled from a
+            normal distribution in PyTorch?
+          </h3>
+          <label
+            ><input type="radio" name="question7" value="A" /> A. torch.rand(2,
+            2)</label
+          >
+          <label
+            ><input type="radio" name="question7" value="B" /> B. torch.randn(2,
+            2)</label
+          >
+          <label
+            ><input type="radio" name="question7" value="C" /> C.
+            torch.random(2, 2)</label
+          >
+          <label
+            ><input type="radio" name="question7" value="D" /> D.
+            torch.randperm(2, 2)</label
+          >
+          <button type="button" onclick="showAnswer('question7')">
+            Show Answer
+          </button>
+          <div id="question7" class="answer">Answer: B. torch.randn(2, 2)</div>
+        </div>
+
+        <div class="question">
+          <h3>
+            8. Which method would you use to change the shape of a tensor x from
+            (2, 3) to (3, 2)?
+          </h3>
+          <label
+            ><input type="radio" name="question8" value="A" /> A. x.resize((3,
+            2))</label
+          >
+          <label
+            ><input type="radio" name="question8" value="B" /> B. x.reshape((3,
+            2))</label
+          >
+          <label
+            ><input type="radio" name="question8" value="C" /> C. x.view((3,
+            2))</label
+          >
+          <label
+            ><input type="radio" name="question8" value="D" /> D. x.resize_((3,
+            2))</label
+          >
+          <button type="button" onclick="showAnswer('question8')">
+            Show Answer
+          </button>
+          <div id="question8" class="answer">Answer: B. x.reshape((3, 2))</div>
+        </div>
+
+        <div class="question">
+          <h3>9. What does tensor.view(-1) do?</h3>
+          <label
+            ><input type="radio" name="question9" value="A" /> A. Changes the
+            tensor to a scalar</label
+          >
+          <label
+            ><input type="radio" name="question9" value="B" /> B. Changes the
+            tensor to a single row vector</label
+          >
+          <label
+            ><input type="radio" name="question9" value="C" /> C. Flattens the
+            tensor to a one-dimensional tensor</label
+          >
+          <label
+            ><input type="radio" name="question9" value="D" /> D. Changes the
+            tensor to a square matrix</label
+          >
+          <button type="button" onclick="showAnswer('question9')">
+            Show Answer
+          </button>
+          <div id="question9" class="answer">
+            Answer: C. Flattens the tensor to a one-dimensional tensor
+          </div>
+        </div>
+
+        <div class="question">
+          <h3>
+            10. Which of the following is NOT a valid way to create a PyTorch
+            tensor?
+          </h3>
+          <label
+            ><input type="radio" name="question10" value="A" /> A.
+            torch.tensor([1, 2, 3])</label
+          >
+          <label
+            ><input type="radio" name="question10" value="B" />
+            B.torch.Tensor(2, 3)</label
+          >
+          <label
+            ><input type="radio" name="question10" value="C" /> C.
+            torch.Tensor([1, 2, 3])</label
+          >
+          <label
+            ><input type="radio" name="question10" value="D" /> D.
+            torch.create_tensor([1, 2, 3])</label
+          >
+          <button type="button" onclick="showAnswer('question10')">
+            Show Answer
+          </button>
+          <div id="question10" class="answer">
+            Answer: D. torch.create_tensor([1, 2, 3])
+          </div>
+        </div>
+
+        <div class="question">
+          <h3>11. Which is the default data type of tensor?</h3>
+          <label
+            ><input type="radio" name="question11" value="A" /> A. 32-bit
+            floating-point.
+          </label>
+          <label
+            ><input type="radio" name="question11" value="B" /> B. 64-bit,
+            double-precision floating-point</label
+          >
+          <label
+            ><input type="radio" name="question11" value="C" /> C. 16-bit,
+            half-precision floating-point</label
+          >
+          <label
+            ><input type="radio" name="question11" value="D" /> D. signed 8-bit
+            integers</label
+          >
+          <button type="button" onclick="showAnswer('question11')">
+            Show Answer
+          </button>
+          <div id="question11" class="answer">
+            Answer: A. 32-bit floating-point.
+          </div>
+        </div>
+
+        <div class="question">
+          <h3>
+            11. zero_() method of tensor modifies the original tensor or create
+            a new output tensor or return it?
+            <img src="Tensors questions/memory.png" />
+          </h3>
+          <label
+            ><input type="radio" name="question12" value="A" /> A. Modifies it
+          </label>
+          <label
+            ><input type="radio" name="question12" value="B" /> B. Make new
+            Tensor</label
+          >
+          <button type="button" onclick="showAnswer('question12')">
+            Show Answer
+          </button>
+          <div id="question12" class="answer">Answer: A. Modifies it</div>
+        </div>
+      </form>
+    </div>
+
+    <script src="Excersise.js"></script>
+  </body>
+</html>
